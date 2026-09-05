@@ -1,12 +1,16 @@
 import { useEffect, useState } from 'react'
-import { fetchCollection } from '../api'
+import { apiBaseUrl, fetchCollection } from '../api'
+
+const workoutsEndpoint = import.meta.env.VITE_CODESPACE_NAME?.trim()
+  ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/workouts/`
+  : `${apiBaseUrl}/workouts/`
 
 function Workouts() {
   const [workouts, setWorkouts] = useState([])
   const [error, setError] = useState('')
 
   useEffect(() => {
-    fetchCollection('workouts').then(setWorkouts).catch((loadError) => setError(loadError.message))
+    fetchCollection(workoutsEndpoint).then(setWorkouts).catch((loadError) => setError(loadError.message))
   }, [])
 
   return (
