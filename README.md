@@ -1,5 +1,7 @@
 # Build Applications with GitHub Copilot Agent Mode
 
+The OctoFit API supports Codespaces hosting and localhost development.
+
 <img src="https://octodex.github.com/images/Professortocat_v2.png" align="right" height="200px" />
 
 Hey Suraj-Kumar-Panigrahi!
